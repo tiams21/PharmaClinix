@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,6 @@
   <title>PharmaClinix</title>
 </head>
 <body>
-  
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
@@ -174,29 +174,21 @@ body{background:#f0f4f8;padding:20px;}
 .stat-num{font-size:18px;font-weight:500;color:var(--teal);display:block;font-family:'DM Mono',monospace}
 .stat-lbl{font-size:10px;color:var(--txt3)}
 
-/* SCROLL INDICATOR */
-.scroll-hint{font-size:10px;color:var(--txt3);text-align:center;padding:8px;border-top:0.5px solid var(--border);margin-top:4px}
-
 /* HIDDEN PANELS */
 .panel{display:none}
 .panel.active{display:block}
 </style>
-
 
 <div class="dash" id="dash">
 
   <!-- HEADER -->
   <div class="hdr">
     <button class="mob-menu-btn" onclick="toggleSidebar()">
-      function toggleImap(el){
-  const exp=el.querySelector('.imap-expanded');
-  if(exp)exp.style.display=exp.style.display==='none'?'block':'none';
-}
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-</button>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
     <div class="hdr-logo">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      PharmaClinical
+      PharmaClinix
     </div>
     <div class="hdr-search">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
@@ -213,12 +205,12 @@ body{background:#f0f4f8;padding:20px;}
 
   <!-- SIDEBAR -->
   <div id="overlay" onclick="toggleSidebar()" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:199"></div>
- <div class="sidebar" id="sidebar">
-   <div style="display:flex;justify-content:flex-end;padding:10px 12px">
-  <button onclick="toggleSidebar()" style="background:none;border:none;cursor:pointer;color:rgba(255,255,255,0.7)">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-  </button>
-</div>
+  <div class="sidebar" id="sidebar">
+    <div style="display:flex;justify-content:flex-end;padding:10px 12px">
+      <button onclick="toggleSidebar()" style="background:none;border:none;cursor:pointer;color:rgba(255,255,255,0.7)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
     <div class="sb-section">
       <div class="sb-title">Fast Facts</div>
       <div class="sb-fastfact">
@@ -227,10 +219,9 @@ body{background:#f0f4f8;padding:20px;}
       </div>
       <div class="sb-fastfact" style="background:rgba(24,95,165,0.15);border-color:rgba(24,95,165,0.3)">
         <div class="sb-fastfact-title" style="color:#85B7EB">Quick Recall</div>
-        <div class="sb-fastfact-text" id="ff-recall">AL = Artemether + Lumefantrine. Take with food (fatty meal boosts absorption 16×). Full 3-day course even if feeling better.</div>
+        <div class="sb-fastfact-text" id="ff-recall">AL = Artemether + Lumefantrine. Take with food (fatty meal boosts absorption 16x). Full 3-day course even if feeling better.</div>
       </div>
     </div>
-
     <div class="sb-divider"></div>
     <div class="sb-section">
       <div class="sb-title">Categories</div>
@@ -250,7 +241,6 @@ body{background:#f0f4f8;padding:20px;}
         <div class="sb-dot" style="background:#E24B4A"></div>Emergency
       </div>
     </div>
-
     <div class="sb-divider"></div>
     <div class="sb-section">
       <div class="sb-title" id="dis-cat-label">Infectious</div>
@@ -286,29 +276,16 @@ body{background:#f0f4f8;padding:20px;}
 
     <!-- GUIDELINES TAB -->
     <div class="content panel active" id="tab-guidelines">
-
-      <!-- Stats strip -->
-      <div class="stat-strip" id="stats-strip">
-        <div class="stat-chip"><span class="stat-num">249M</span><span class="stat-lbl">Global cases/yr</span></div>
-        <div class="stat-chip"><span class="stat-num">608K</span><span class="stat-lbl">Deaths/yr</span></div>
-        <div class="stat-chip"><span class="stat-num">95%</span><span class="stat-lbl">Cases in Africa</span></div>
-        <div class="stat-chip"><span class="stat-num">3 days</span><span class="stat-lbl">ACT course</span></div>
-      </div>
-
-      <!-- Patho + Clinical -->
+      <div class="stat-strip" id="stats-strip"></div>
       <div class="section-grid">
         <div class="card">
           <div class="card-header">
             <div class="card-icon" style="background:var(--teal-light)">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/></svg>
             </div>
-            <div><div class="card-title">Pathophysiology & Etiology</div><div class="card-sub" id="patho-sub">Plasmodium spp. via Anopheles mosquito</div></div>
+            <div><div class="card-title">Pathophysiology & Etiology</div><div class="card-sub" id="patho-sub"></div></div>
           </div>
-          <div id="patho-content">
-            <div class="patho-row"><div class="patho-dot"></div><div class="patho-text"><span class="patho-label">Causative Agent</span>P. falciparum (most lethal), P. vivax, P. malariae, P. ovale</div></div>
-            <div class="patho-row"><div class="patho-dot"></div><div class="patho-text"><span class="patho-label">Mechanism</span>Parasite invades RBCs → hemolysis → cytokine release → fever cycles every 48–72h. Falciparum causes microvascular sequestration → cerebral malaria</div></div>
-            <div class="patho-row"><div class="patho-dot"></div><div class="patho-text"><span class="patho-label">Transmission</span>Female Anopheles gambiae bite (night-biting), rarely blood transfusion or vertical (congenital)</div></div>
-          </div>
+          <div id="patho-content"></div>
         </div>
         <div class="card">
           <div class="card-header">
@@ -317,33 +294,18 @@ body{background:#f0f4f8;padding:20px;}
             </div>
             <div><div class="card-title">Clinical Presentation</div><div class="card-sub">Signs, symptoms & red flags</div></div>
           </div>
-          <div id="clinical-content">
-            <div style="margin-bottom:8px;display:flex;flex-wrap:wrap;gap:4px">
-              <span class="clinical-chip">Fever &gt;38°C</span>
-              <span class="clinical-chip">Rigors</span>
-              <span class="clinical-chip">Headache</span>
-              <span class="clinical-chip">Myalgia</span>
-              <span class="clinical-chip">Vomiting</span>
-              <span class="clinical-chip">Splenomegaly</span>
-            </div>
-            <div class="alert-row alert-ddi" style="padding:7px;margin-bottom:0">
-              <div class="alert-icon" style="font-size:10px">!</div>
-              <div><div class="alert-title" style="font-size:11px">Severe Malaria Red Flags</div><div class="alert-desc">Impaired consciousness · Severe anaemia (Hb&lt;7) · Respiratory distress · Hypoglycaemia · Haemoglobinuria · Jaundice</div></div>
-            </div>
-          </div>
+          <div id="clinical-content"></div>
         </div>
       </div>
-
-      <!-- Pharmacotherapy Table -->
       <div class="card card-full" style="margin-bottom:12px">
         <div class="card-header">
           <div class="card-icon" style="background:var(--purple-bg)">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2l-3 3a2.83 2.83 0 0 0 4 4l3-3"/><path d="M6 22l10-10"/></svg>
           </div>
-          <div><div class="card-title">Pharmacotherapy</div><div class="card-sub" id="pharma-sub">First-line & alternative drug regimens</div></div>
+          <div><div class="card-title">Pharmacotherapy</div><div class="card-sub" id="pharma-sub"></div></div>
         </div>
         <div style="overflow-x:auto">
-          <table class="ptable" id="pharma-table">
+          <table class="ptable">
             <thead>
               <tr>
                 <th>Drug / Class</th>
@@ -357,8 +319,6 @@ body{background:#f0f4f8;padding:20px;}
           </table>
         </div>
       </div>
-
-      <!-- Interactions + Counseling -->
       <div class="section-grid">
         <div class="card">
           <div class="card-header">
@@ -369,7 +329,6 @@ body{background:#f0f4f8;padding:20px;}
           </div>
           <div id="alerts-content"></div>
         </div>
-
         <div class="card">
           <div class="card-header">
             <div class="card-icon" style="background:var(--green-bg)">
@@ -384,7 +343,7 @@ body{background:#f0f4f8;padding:20px;}
 
     <!-- INTERACTIONS TAB -->
     <div class="content panel" id="tab-interactions">
-      <div style="margin-bottom:12px;display:flex;align-items:center;gap:8px">
+      <div style="margin-bottom:12px;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
         <span class="badge b-red">Red = Major</span>
         <span class="badge b-amber">Orange = Moderate</span>
         <span class="badge b-green">Green = Minor</span>
@@ -392,10 +351,8 @@ body{background:#f0f4f8;padding:20px;}
       <div class="imap-grid" id="imap-grid"></div>
       <div style="margin-top:14px">
         <div class="card">
-          <div class="card-header">
-            <div class="card-title">Contraindication Matrix</div>
-          </div>
-          <div id="ci-matrix"></div>
+          <div class="card-header"><div class="card-title">Contraindication Matrix</div></div>
+          <div style="overflow-x:auto"><div id="ci-matrix"></div></div>
         </div>
       </div>
     </div>
@@ -414,23 +371,23 @@ body{background:#f0f4f8;padding:20px;}
 </div>
 
 <script>
-const DB = {
+const DB={
   malaria:{
     dotd:'Malaria',
     ff_title:'Malaria — Plasmodium falciparum',
     ff_text:'Leading cause of fever in Nigeria. ~27% of global malaria deaths occur in West Africa. ACT is first-line. Use RDT before treating.',
-    ff_recall:'AL = Artemether + Lumefantrine. Take with food (fatty meal boosts absorption 16×). Full 3-day course even if feeling better.',
+    ff_recall:'AL = Artemether + Lumefantrine. Take with food (fatty meal boosts absorption 16x). Full 3-day course even if feeling better.',
     stats:[{n:'249M',l:'Global cases/yr'},{n:'608K',l:'Deaths/yr'},{n:'95%',l:'Cases in Africa'},{n:'3 days',l:'ACT course'}],
     patho_sub:'Plasmodium spp. via Anopheles mosquito',
     patho:[
       {label:'Causative Agent',text:'P. falciparum (most lethal), P. vivax, P. malariae, P. ovale'},
-      {label:'Mechanism',text:'Parasite invades RBCs → hemolysis → cytokine release → fever cycles every 48–72h. Falciparum causes microvascular sequestration → cerebral malaria'},
+      {label:'Mechanism',text:'Parasite invades RBCs → hemolysis → cytokine release → fever cycles every 48-72h. Falciparum causes microvascular sequestration → cerebral malaria'},
       {label:'Transmission',text:'Female Anopheles gambiae bite (night-biting), rarely blood transfusion or vertical (congenital)'}
     ],
     clinical:['Fever >38°C','Rigors','Headache','Myalgia','Vomiting','Splenomegaly'],
     clinical_severe:'Impaired consciousness · Severe anaemia (Hb<7) · Respiratory distress · Hypoglycaemia · Haemoglobinuria · Jaundice',
     drugs:[
-      {name:'Artemether-Lumefantrine (AL)',cls:'b-teal',cls_txt:'Antimalarial / ACT',moa:'Artemether → toxic free radicals kill parasite; Lumefantrine → inhibits haem polymerisation',adult:'4 tabs BID × 3 days (with food)',ped:'By weight: 5–14 kg = 1 tab BID; 15–24 kg = 2 tabs BID',line:'b-green',line_txt:'1st Line'},
+      {name:'Artemether-Lumefantrine (AL)',cls:'b-teal',cls_txt:'Antimalarial / ACT',moa:'Artemether → toxic free radicals kill parasite; Lumefantrine → inhibits haem polymerisation',adult:'4 tabs BID × 3 days (with food)',ped:'By weight: 5-14 kg = 1 tab BID; 15-24 kg = 2 tabs BID',line:'b-green',line_txt:'1st Line'},
       {name:'Artesunate IV',cls:'b-red',cls_txt:'Antimalarial / Parenteral',moa:'Artemisinin derivative → reactive endoperoxide bridge destroys parasite haem',adult:'2.4 mg/kg IV at 0, 12, 24h then daily',ped:'2.4 mg/kg IV same schedule',line:'b-red',line_txt:'Severe Malaria'},
       {name:'Dihydroartemisinin-Piperaquine',cls:'b-teal',cls_txt:'Antimalarial / ACT',moa:'DHA kills ring-stage; Piperaquine → long half-life prophylactic tail',adult:'3 tabs daily × 3 days',ped:'Weight-based once daily × 3 days',line:'b-amber',line_txt:'Alternative'},
       {name:'Quinine + Doxycycline',cls:'b-amber',cls_txt:'Antimalarial / Alkaloid',moa:'Quinine inhibits haem polymerisation; Doxycycline inhibits 30S ribosomal protein synthesis',adult:'600 mg TID + 100 mg BD × 7 days',ped:'10 mg/kg TID + 2.2 mg/kg BD (>8 yrs)',line:'b-navy',line_txt:'2nd Line'},
@@ -451,12 +408,12 @@ const DB = {
       'Pregnant women in endemic areas should receive Intermittent Preventive Therapy (IPTp-SP) at each ANC visit after 13 weeks.'
     ],
     imap:[
-     {drug:'AL + Halofantrine',severity:3,type:'danger',detail:'QTc prolongation — Major',expanded:'Both AL and Halofantrine prolong the QT interval. Co-administration can cause fatal arrhythmias including Torsades de Pointes. Avoid completely. ECG monitoring required if exposure occurred.'},
-      {drug:'Quinine + Digoxin',severity:3,type:'danger',detail:'Elevated digoxin levels — Major'},
-      {drug:'AL + Rifampicin',severity:2,type:'warn',detail:'Reduced AL efficacy — Moderate'},
-      {drug:'CQ + Amiodarone',severity:3,type:'danger',detail:'QTc prolongation — Major'},
-      {drug:'CQ + Antacids',severity:2,type:'warn',detail:'Reduced CQ absorption — Moderate'},
-      {drug:'Quinine + Warfarin',severity:2,type:'warn',detail:'Enhanced anticoagulant effect'},
+      {drug:'AL + Halofantrine',severity:3,type:'danger',detail:'QTc prolongation — Major',expanded:'Both AL and Halofantrine prolong the QT interval. Co-administration can cause fatal arrhythmias including Torsades de Pointes. Avoid completely. ECG monitoring required if exposure occurred.'},
+      {drug:'Quinine + Digoxin',severity:3,type:'danger',detail:'Elevated digoxin levels — Major',expanded:'Quinine inhibits P-glycoprotein and renal tubular secretion of digoxin, raising plasma digoxin levels by up to 50%. Risk of digoxin toxicity: nausea, bradycardia, visual disturbances. Monitor digoxin levels closely.'},
+      {drug:'AL + Rifampicin',severity:2,type:'warn',detail:'Reduced AL efficacy — Moderate',expanded:'Rifampicin is a potent CYP3A4 inducer. It accelerates metabolism of both artemether and lumefantrine, reducing their plasma concentrations significantly. Treatment failure likely. Use alternative TB regimen or switch antimalarial.'},
+      {drug:'CQ + Amiodarone',severity:3,type:'danger',detail:'QTc prolongation — Major',expanded:'Both chloroquine and amiodarone independently prolong QTc. Combination significantly increases risk of life-threatening ventricular arrhythmias. Avoid co-administration. If unavoidable, continuous cardiac monitoring is mandatory.'},
+      {drug:'CQ + Antacids',severity:2,type:'warn',detail:'Reduced CQ absorption — Moderate',expanded:'Magnesium trisilicate and other antacids reduce chloroquine absorption by up to 30% through adsorption in the GI tract. Space administration by at least 4 hours. Counsel patient not to take antacids at the same time as CQ.'},
+      {drug:'Quinine + Warfarin',severity:2,type:'warn',detail:'Enhanced anticoagulant effect',expanded:'Quinine inhibits CYP2C9, the enzyme responsible for warfarin metabolism. This raises warfarin plasma levels and increases bleeding risk. Monitor INR closely during and after quinine therapy. Dose adjustment of warfarin may be required.'}
     ],
     ci:[
       {cond:'1st Trimester Pregnancy',drug:'ACTs (Artemisinin)',alt:'Quinine + Clindamycin'},
@@ -475,22 +432,22 @@ const DB = {
     patho:[
       {label:'Resistance Mechanism',text:'Mutations in rpoB gene (Rifampicin resistance), katG / inhA (Isoniazid). Acquired through incomplete treatment or direct transmission.'},
       {label:'Pathophysiology',text:'Mycobacteria form granulomas in lung → liquefaction → cavitation → droplet spread. Miliary TB occurs via haematogenous dissemination.'},
-      {label:'Risk Factors',text:'Prior TB treatment, HIV co-infection (30× risk), household contact with MDR-TB case, poor adherence, malnutrition'}
+      {label:'Risk Factors',text:'Prior TB treatment, HIV co-infection (30x risk), household contact with MDR-TB case, poor adherence, malnutrition'}
     ],
     clinical:['Productive cough >2wks','Haemoptysis','Night sweats','Weight loss','Fever','Fatigue','Lymphadenopathy'],
     clinical_severe:'Massive haemoptysis · Pneumothorax · Respiratory failure · Miliary spread · MDR-TB meningitis',
     drugs:[
-      {name:'Bedaquiline',cls:'b-teal',cls_txt:'Diarylquinolinone',moa:'Inhibits mycobacterial ATP synthase → bactericidal',adult:'400 mg daily × 2 wks, then 200 mg 3×/wk × 22 wks',ped:'≥5 yrs weight-based',line:'b-green',line_txt:'BPaL Core'},
+      {name:'Bedaquiline',cls:'b-teal',cls_txt:'Diarylquinolinone',moa:'Inhibits mycobacterial ATP synthase → bactericidal',adult:'400 mg daily × 2 wks, then 200 mg 3x/wk × 22 wks',ped:'≥5 yrs weight-based',line:'b-green',line_txt:'BPaL Core'},
       {name:'Pretomanid',cls:'b-teal',cls_txt:'Nitroimidazole',moa:'Bioreductive activation → inhibits mycolic acid synthesis + reactive nitrogen species',adult:'200 mg daily × 26 wks',ped:'Not established <14 yrs',line:'b-green',line_txt:'BPaL Core'},
       {name:'Linezolid',cls:'b-blue',cls_txt:'Oxazolidinone',moa:'Inhibits 23S ribosomal RNA → prevents bacterial protein synthesis',adult:'600 mg daily (reduce to 300 mg if toxicity)',ped:'10 mg/kg daily',line:'b-green',line_txt:'BPaL Core'},
-      {name:'Levofloxacin',cls:'b-amber',cls_txt:'Fluoroquinolone',moa:'Inhibits DNA gyrase & topoisomerase IV → bactericidal',adult:'750–1000 mg daily',ped:'15–20 mg/kg daily',line:'b-amber',line_txt:'Longer Regimen'},
-      {name:'Clofazimine',cls:'b-purple',cls_txt:'Riminophenazine',moa:'Binds mycobacterial DNA → membrane depolarisation → ROS generation',adult:'100 mg daily',ped:'2–5 mg/kg daily',line:'b-amber',line_txt:'Longer Regimen'}
+      {name:'Levofloxacin',cls:'b-amber',cls_txt:'Fluoroquinolone',moa:'Inhibits DNA gyrase & topoisomerase IV → bactericidal',adult:'750-1000 mg daily',ped:'15-20 mg/kg daily',line:'b-amber',line_txt:'Longer Regimen'},
+      {name:'Clofazimine',cls:'b-purple',cls_txt:'Riminophenazine',moa:'Binds mycobacterial DNA → membrane depolarisation → ROS generation',adult:'100 mg daily',ped:'2-5 mg/kg daily',line:'b-amber',line_txt:'Longer Regimen'}
     ],
     alerts:[
       {type:'ddi',title:'Bedaquiline + QTc-prolonging agents',desc:'Azithromycin, clofazimine, fluoroquinolones — cumulative QT prolongation. ECG monitoring mandatory at baseline, weeks 2, 4, 8, 12.'},
       {type:'ddi',title:'Bedaquiline + CYP3A4 inducers',desc:'Rifampicin, efavirenz reduce bedaquiline AUC by ~52%. Avoid concurrent use — use dolutegravir-based ART for HIV co-infection.'},
       {type:'ddf',title:'Bedaquiline must be taken with food',desc:'Food increases bedaquiline bioavailability 2-fold. Counsel patients to never take on an empty stomach.'},
-      {type:'ci',title:'Contraindications & Cautions',desc:'Bedaquiline: QTc >500ms — withhold. Linezolid: serotonin syndrome risk with SSRIs/MAOIs. Moxifloxacin: tendon rupture risk in elderly. Pregnancy: individualize regimen — most Group A/B agents have limited data.'}
+      {type:'ci',title:'Contraindications & Cautions',desc:'Bedaquiline: QTc >500ms — withhold. Linezolid: serotonin syndrome risk with SSRIs/MAOIs. Moxifloxacin: tendon rupture risk in elderly. Pregnancy: individualize regimen.'}
     ],
     counsel:[
       'Never stop MDR-TB treatment early — even one missed dose can worsen resistance. DOT (Directly Observed Therapy) is required.',
@@ -500,12 +457,12 @@ const DB = {
       'Isolate at home during first 2 weeks: wear surgical mask, open windows, sleep in a separate room. Contacts must be screened.'
     ],
     imap:[
-      {drug:'Bedaquiline + Moxifloxacin',severity:3,type:'danger',detail:'Additive QTc prolongation'},
-      {drug:'Bedaquiline + Rifampicin',severity:3,type:'danger',detail:'CYP3A4 induction — Major'},
-      {drug:'Linezolid + SSRIs',severity:3,type:'danger',detail:'Serotonin syndrome — Major'},
-      {drug:'Linezolid + Tramadol',severity:2,type:'warn',detail:'Serotonin toxicity — Moderate'},
-      {drug:'Clofazimine + QTc drugs',severity:2,type:'warn',detail:'Additive QT — Moderate'},
-      {drug:'Levofloxacin + Antacids',severity:2,type:'warn',detail:'Chelation — reduced absorption'}
+      {drug:'Bedaquiline + Moxifloxacin',severity:3,type:'danger',detail:'Additive QTc prolongation',expanded:'Both agents independently prolong QTc. Co-administration significantly increases risk of Torsades de Pointes. ECG monitoring mandatory. Consider alternative fluoroquinolone or restructure regimen.'},
+      {drug:'Bedaquiline + Rifampicin',severity:3,type:'danger',detail:'CYP3A4 induction — Major',expanded:'Rifampicin is a potent CYP3A4 inducer that reduces bedaquiline AUC by ~52%. This renders bedaquiline sub-therapeutic. Use dolutegravir-based ART instead of rifampicin-based regimens in HIV/MDR-TB co-infection.'},
+      {drug:'Linezolid + SSRIs',severity:3,type:'danger',detail:'Serotonin syndrome — Major',expanded:'Linezolid is a weak MAO inhibitor. Combined with SSRIs (fluoxetine, sertraline), it can precipitate serotonin syndrome: hyperthermia, agitation, tremor, diarrhoea, hyperreflexia. Washout period required before starting linezolid.'},
+      {drug:'Linezolid + Tramadol',severity:2,type:'warn',detail:'Serotonin toxicity — Moderate',expanded:'Tramadol has serotonergic activity. Combined with linezolid (MAO inhibitor), risk of serotonin toxicity increases. Use paracetamol or NSAIDs for pain management during MDR-TB treatment where possible.'},
+      {drug:'Clofazimine + QTc drugs',severity:2,type:'warn',detail:'Additive QT — Moderate',expanded:'Clofazimine itself prolongs QTc by up to 20ms. When combined with other QT-prolonging agents in the MDR-TB regimen, cumulative effect is significant. Baseline and serial ECG monitoring essential throughout therapy.'},
+      {drug:'Levofloxacin + Antacids',severity:2,type:'warn',detail:'Chelation — reduced absorption',expanded:'Divalent cations (Mg2+, Al3+, Ca2+) in antacids chelate levofloxacin in the GI tract, reducing oral bioavailability by up to 40%. Administer levofloxacin at least 2 hours before or 6 hours after antacids, iron, or calcium supplements.'}
     ],
     ci:[
       {cond:'QTc > 500ms',drug:'Bedaquiline / Delamanid / Moxifloxacin',alt:'Linezolid-based regimen only'},
@@ -518,28 +475,28 @@ const DB = {
     dotd:'Typhoid Fever',
     ff_title:'Typhoid — Salmonella Typhi',
     ff_text:'Enteric fever endemic in Nigeria. Contaminated water/food main source. WIDAL test has poor specificity — blood culture is gold standard.',
-    ff_recall:'Azithromycin is now preferred oral agent in Nigeria due to fluoroquinolone resistance. Ceftriaxone for severe cases. Treat for 7–14 days.',
-    stats:[{n:'11M',l:'Cases globally/yr'},{n:'129K',l:'Deaths/yr'},{n:'2–5%',l:'Case fatality (untreated)'},{n:'7–14',l:'Treatment days'}],
+    ff_recall:'Azithromycin is now preferred oral agent in Nigeria due to fluoroquinolone resistance. Ceftriaxone for severe cases. Treat for 7-14 days.',
+    stats:[{n:'11M',l:'Cases globally/yr'},{n:'129K',l:'Deaths/yr'},{n:'2-5%',l:'Case fatality'},{n:'7-14',l:'Treatment days'}],
     patho_sub:'Salmonella enterica serovar Typhi',
     patho:[
       {label:'Pathogenesis',text:'Fecal-oral ingestion → M-cell invasion in Peyer patches → macrophage dissemination via lymphatics → bacteraemia → RES seeding'},
       {label:'Clinical Stages',text:'Week 1: stepwise fever + relative bradycardia. Week 2: rose spots, splenomegaly. Week 3: complications (perforation, haemorrhage, encephalopathy)'},
       {label:'Complications',text:'Intestinal perforation (3%), encephalopathy, hepatitis, myocarditis, bone marrow suppression'}
     ],
-    clinical:['Stepwise fever','Relative bradycardia','Rose spots','Coated tongue','Constipation→Diarrhoea','Hepatosplenomegaly'],
+    clinical:['Stepwise fever','Relative bradycardia','Rose spots','Coated tongue','Constipation/Diarrhoea','Hepatosplenomegaly'],
     clinical_severe:'Intestinal perforation · Typhoid encephalopathy · Peritonitis · GI haemorrhage',
     drugs:[
       {name:'Azithromycin',cls:'b-blue',cls_txt:'Macrolide',moa:'Inhibits 50S ribosomal subunit; intracellular bactericidal activity against Salmonella',adult:'1 g stat, then 500 mg daily × 6 days',ped:'20 mg/kg daily × 7 days (max 1 g)',line:'b-green',line_txt:'1st Line (Oral)'},
-      {name:'Ceftriaxone',cls:'b-red',cls_txt:'3rd Gen Cephalosporin',moa:'Inhibits cell wall synthesis (PBP binding) → bactericidal',adult:'2 g IV/IM daily × 7–14 days',ped:'80 mg/kg/day IV',line:'b-green',line_txt:'Severe Disease'},
-      {name:'Ciprofloxacin',cls:'b-amber',cls_txt:'Fluoroquinolone',moa:'Inhibits DNA gyrase → bactericidal (↑resistance rates in Nigeria)',adult:'500 mg BD × 10–14 days',ped:'15 mg/kg BD × 10 days',line:'b-amber',line_txt:'If susceptible'},
-      {name:'Chloramphenicol',cls:'b-purple',cls_txt:'Broad-spectrum',moa:'Inhibits 50S ribosome → bacteriostatic; good tissue penetration',adult:'500 mg QID × 14 days',ped:'50 mg/kg/day in divided doses',line:'b-navy',line_txt:'Where cost-limited'},
+      {name:'Ceftriaxone',cls:'b-red',cls_txt:'3rd Gen Cephalosporin',moa:'Inhibits cell wall synthesis (PBP binding) → bactericidal',adult:'2 g IV/IM daily × 7-14 days',ped:'80 mg/kg/day IV',line:'b-green',line_txt:'Severe Disease'},
+      {name:'Ciprofloxacin',cls:'b-amber',cls_txt:'Fluoroquinolone',moa:'Inhibits DNA gyrase → bactericidal',adult:'500 mg BD × 10-14 days',ped:'15 mg/kg BD × 10 days',line:'b-amber',line_txt:'If susceptible'},
+      {name:'Chloramphenicol',cls:'b-purple',cls_txt:'Broad-spectrum',moa:'Inhibits 50S ribosome → bacteriostatic; good tissue penetration',adult:'500 mg QID × 14 days',ped:'50 mg/kg/day in divided doses',line:'b-navy',line_txt:'Cost-limited'},
       {name:'Dexamethasone',cls:'b-navy',cls_txt:'Corticosteroid',moa:'Anti-inflammatory → reduces mortality in severe typhoid encephalopathy',adult:'3 mg/kg IV then 1 mg/kg q6h × 48h',ped:'Same dosing',line:'b-red',line_txt:'Severe only'}
     ],
     alerts:[
-      {type:'ddi',title:'Ciprofloxacin + Antacids / Iron',desc:'Divalent cations (Mg²⁺, Al³⁺, Fe²⁺) chelate ciprofloxacin → reduce absorption by up to 90%. Space by at least 2 hours.'},
+      {type:'ddi',title:'Ciprofloxacin + Antacids / Iron',desc:'Divalent cations (Mg2+, Al3+, Fe2+) chelate ciprofloxacin → reduce absorption by up to 90%. Space by at least 2 hours.'},
       {type:'ddi',title:'Chloramphenicol + Warfarin / Phenytoin',desc:'Chloramphenicol inhibits CYP2C9 → elevated warfarin/phenytoin levels → bleeding risk or toxicity.'},
       {type:'ddf',title:'Ciprofloxacin & Dairy/Calcium foods',desc:'Milk, yogurt, calcium-fortified juice reduce fluoroquinolone absorption. Take on empty stomach or 2h after meal.'},
-      {type:'ci',title:'Contraindications',desc:'Ciprofloxacin: pregnancy, <18 yrs (cartilage toxicity — use only if benefit outweighs risk). Chloramphenicol: neonates (grey baby syndrome), G6PD deficiency. Ceftriaxone: severe penicillin allergy (cross-reactivity <1–2%).'}
+      {type:'ci',title:'Contraindications',desc:'Ciprofloxacin: pregnancy, <18 yrs. Chloramphenicol: neonates (grey baby syndrome), G6PD deficiency. Ceftriaxone: severe penicillin allergy.'}
     ],
     counsel:[
       'Drink only boiled or bottled water. Avoid street food and raw vegetables washed with tap water.',
@@ -549,46 +506,46 @@ const DB = {
       'Typhoid Vi polysaccharide vaccine is available and recommended for travellers and endemic area residents — single dose lasts 3 years.'
     ],
     imap:[
-      {drug:'Cipro + Antacids',severity:3,type:'danger',detail:'Chelation — 90% absorption loss'},
-      {drug:'Chloramphenicol + Warfarin',severity:3,type:'danger',detail:'CYP2C9 inhibition — Major'},
-      {drug:'Cipro + NSAIDs',severity:2,type:'warn',detail:'Seizure risk — Moderate'},
-      {drug:'Cipro + Theophylline',severity:3,type:'danger',detail:'Theophylline toxicity'},
-      {drug:'Azithromycin + QTc drugs',severity:2,type:'warn',detail:'QT prolongation — Moderate'},
-      {drug:'Ceftriaxone + Ca²⁺ IV',severity:3,type:'danger',detail:'Precipitation — fatal in neonates'}
+      {drug:'Cipro + Antacids',severity:3,type:'danger',detail:'Chelation — 90% absorption loss',expanded:'Divalent cations in antacids (Mg2+, Al3+) form insoluble chelates with ciprofloxacin in the GI tract, reducing bioavailability by up to 90%. Take ciprofloxacin 2 hours before or 6 hours after antacids. This also applies to iron supplements and zinc.'},
+      {drug:'Chloramphenicol + Warfarin',severity:3,type:'danger',detail:'CYP2C9 inhibition — Major',expanded:'Chloramphenicol inhibits CYP2C9, the primary enzyme metabolising warfarin. This significantly raises warfarin plasma levels, increasing bleeding risk. Monitor INR closely. Warfarin dose reduction of 30-50% may be required during chloramphenicol therapy.'},
+      {drug:'Cipro + NSAIDs',severity:2,type:'warn',detail:'Seizure risk — Moderate',expanded:'NSAIDs (especially fenoprofen, ibuprofen) inhibit GABA-A receptors. Combined with fluoroquinolones which also antagonise GABA, there is an additive risk of CNS excitation and seizures. Use paracetamol for fever/pain management during ciprofloxacin therapy.'},
+      {drug:'Cipro + Theophylline',severity:3,type:'danger',detail:'Theophylline toxicity',expanded:'Ciprofloxacin inhibits CYP1A2, the main enzyme metabolising theophylline. This can double theophylline plasma levels, causing toxicity: nausea, vomiting, tachycardia, arrhythmias, seizures. Monitor theophylline levels and reduce dose by 30-50%.'},
+      {drug:'Azithromycin + QTc drugs',severity:2,type:'warn',detail:'QT prolongation — Moderate',expanded:'Azithromycin independently prolongs QTc. When combined with other QT-prolonging agents (antipsychotics, antihistamines, antiarrhythmics), the risk of Torsades de Pointes increases. ECG monitoring advisable in high-risk patients.'},
+      {drug:'Ceftriaxone + Ca2+ IV',severity:3,type:'danger',detail:'Precipitation — fatal in neonates',expanded:'Ceftriaxone forms insoluble complexes with calcium in IV solutions and in vivo. In neonates, this can cause fatal cardiopulmonary and renal precipitation. Never co-administer IV ceftriaxone with calcium-containing solutions in neonates. In adults, separate infusions by at least 48 hours.'}
     ],
     ci:[
       {cond:'Pregnancy',drug:'Ciprofloxacin',alt:'Azithromycin or Ceftriaxone'},
       {cond:'Neonates',drug:'Chloramphenicol',alt:'Ceftriaxone IV'},
       {cond:'G6PD Deficiency',drug:'Chloramphenicol / TMP-SMX',alt:'Azithromycin or Ceftriaxone'},
-      {cond:'Renal Impairment (severe)',drug:'Ciprofloxacin full dose',alt:'Reduce to 250–500 mg daily; monitor'}
+      {cond:'Renal Impairment (severe)',drug:'Ciprofloxacin full dose',alt:'Reduce to 250-500 mg daily; monitor'}
     ]
   },
   hiv:{
     dotd:'HIV / AIDS',
     ff_title:'HIV — Human Immunodeficiency Virus',
-    ff_text:'Nigeria has ~1.7 million PLHIV. Current first-line: TLD (TDF+3TC+DTG). VL monitoring every 6–12 months. Treat all regardless of CD4 count.',
+    ff_text:'Nigeria has ~1.7 million PLHIV. Current first-line: TLD (TDF+3TC+DTG). VL monitoring every 6-12 months. Treat all regardless of CD4 count.',
     ff_recall:'DTG is preferred due to high barrier to resistance. Avoid efavirenz in women of childbearing age. VL <200 copies/ml = viral suppression. Monitor renal function with TDF.',
     stats:[{n:'1.7M',l:'PLHIV in Nigeria'},{n:'78%',l:'On ART (2023)'},{n:'CD4<200',l:'AIDS-defining'},{n:'TLD',l:'1st-line regimen'}],
     patho_sub:'HIV-1 retrovirus — CD4+ T-cell depletion',
     patho:[
       {label:'Mechanism',text:'HIV binds CD4 receptor + CCR5/CXCR4 co-receptor → fusion → reverse transcription → integration into host genome → viral factory → CD4 depletion'},
-      {label:'Immunopathology',text:'CD4 count falls progressively: >500 = normal, 200–499 = mild immunosuppression, <200 = AIDS. Opportunistic infections emerge below 200 cells/μL'},
+      {label:'Immunopathology',text:'CD4 count falls progressively: >500 = normal, 200-499 = mild immunosuppression, <200 = AIDS. Opportunistic infections emerge below 200 cells/uL'},
       {label:'Transmission',text:'Unprotected sexual contact (most common), vertical (mother-to-child), blood products, needle sharing'}
     ],
     clinical:['Persistent fever','Weight loss >10%','Oral thrush','Persistent diarrhoea','Night sweats','Lymphadenopathy','Opportunistic infections'],
     clinical_severe:'PCP pneumonia · Cryptococcal meningitis · CMV retinitis · CNS toxoplasmosis · Kaposi sarcoma',
     drugs:[
-      {name:'Tenofovir (TDF)',cls:'b-teal',cls_txt:'NRTI / Backbone',moa:'Nucleoside analogue → incorporates into viral DNA → chain termination (no 3\'-OH)',adult:'300 mg daily',ped:'≥25 kg: 300 mg; 17–24 kg: 200 mg',line:'b-green',line_txt:'TLD 1st Line'},
-      {name:'Lamivudine (3TC)',cls:'b-teal',cls_txt:'NRTI / Backbone',moa:'Cytidine analogue → competitive inhibitor of reverse transcriptase',adult:'300 mg daily (with TDF)',ped:'Weight-based: ≥14 kg: 150 mg',line:'b-green',line_txt:'TLD 1st Line'},
-      {name:'Dolutegravir (DTG)',cls:'b-blue',cls_txt:'INSTI',moa:'Inhibits HIV integrase → prevents viral DNA integration into host chromosome',adult:'50 mg daily',ped:'≥20 kg: 50 mg; weight-based tables',line:'b-green',line_txt:'TLD 1st Line'},
-      {name:'Efavirenz (EFV)',cls:'b-amber',cls_txt:'NNRTI',moa:'Non-competitive inhibitor of reverse transcriptase → allosteric disruption',adult:'600 mg nocte',ped:'≥3 yrs & ≥10 kg, weight-based',line:'b-amber',line_txt:'Alternative'},
+      {name:'Tenofovir (TDF)',cls:'b-teal',cls_txt:'NRTI / Backbone',moa:'Nucleoside analogue → incorporates into viral DNA → chain termination (no 3-OH)',adult:'300 mg daily',ped:'>=25 kg: 300 mg; 17-24 kg: 200 mg',line:'b-green',line_txt:'TLD 1st Line'},
+      {name:'Lamivudine (3TC)',cls:'b-teal',cls_txt:'NRTI / Backbone',moa:'Cytidine analogue → competitive inhibitor of reverse transcriptase',adult:'300 mg daily (with TDF)',ped:'Weight-based: >=14 kg: 150 mg',line:'b-green',line_txt:'TLD 1st Line'},
+      {name:'Dolutegravir (DTG)',cls:'b-blue',cls_txt:'INSTI',moa:'Inhibits HIV integrase → prevents viral DNA integration into host chromosome',adult:'50 mg daily',ped:'>=20 kg: 50 mg; weight-based tables',line:'b-green',line_txt:'TLD 1st Line'},
+      {name:'Efavirenz (EFV)',cls:'b-amber',cls_txt:'NNRTI',moa:'Non-competitive inhibitor of reverse transcriptase → allosteric disruption',adult:'600 mg nocte',ped:'>=3 yrs & >=10 kg, weight-based',line:'b-amber',line_txt:'Alternative'},
       {name:'Atazanavir/r (ATV/r)',cls:'b-red',cls_txt:'Boosted PI',moa:'Inhibits HIV protease → immature non-infectious virions. Ritonavir boosts by CYP3A4 inhibition.',adult:'300/100 mg daily with food',ped:'Not <3 months',line:'b-navy',line_txt:'2nd Line'}
     ],
     alerts:[
-      {type:'ddi',title:'DTG + Divalent cations / Antacids',desc:'Mg²⁺, Al³⁺, Ca²⁺ chelate dolutegravir → reduce absorption by up to 73%. Take DTG 2h before or 6h after antacids/iron.'},
+      {type:'ddi',title:'DTG + Divalent cations / Antacids',desc:'Mg2+, Al3+, Ca2+ chelate dolutegravir → reduce absorption by up to 73%. Take DTG 2h before or 6h after antacids/iron.'},
       {type:'ddi',title:'EFV + Rifampicin (TB co-treatment)',desc:'Rifampicin induces CYP3A4 → reduces EFV levels. Increase EFV dose to 800 mg nocte if >60 kg. DTG preferred: 50 mg BD with rifampicin.'},
-      {type:'ddf',title:'Atazanavir & proton pump inhibitors',desc:'Omeprazole, pantoprazole raise gastric pH → dramatically reduce ATV/r absorption. Avoid co-prescription; use H2 blockers with caution (max ranitidine 150 mg BD).'},
-      {type:'ci',title:'Contraindications & Special Populations',desc:'EFV: avoid in 1st trimester (neural tube defect risk — now less supported but caution maintained). TDF: monitor eGFR; reduce dose if CrCl 30–49 mL/min; avoid if <10. DTG: caution in TB co-infection — give 50 mg BD. NNRTI: avoid in known NNRTI resistance.'}
+      {type:'ddf',title:'Atazanavir & proton pump inhibitors',desc:'Omeprazole, pantoprazole raise gastric pH → dramatically reduce ATV/r absorption. Avoid co-prescription.'},
+      {type:'ci',title:'Contraindications & Special Populations',desc:'EFV: avoid in 1st trimester. TDF: monitor eGFR; reduce dose if CrCl 30-49 mL/min. DTG: caution in TB co-infection — give 50 mg BD. NNRTI: avoid in known NNRTI resistance.'}
     ],
     counsel:[
       'Take all three ART tablets at the same time every day — missing even 2 doses can allow viral replication and resistance development.',
@@ -598,15 +555,15 @@ const DB = {
       'Report any yellow eyes, dark urine, confusion, or severe rash immediately — these may indicate serious drug toxicity requiring regimen change.'
     ],
     imap:[
-      {drug:'DTG + Antacids/Mg²⁺',severity:3,type:'danger',detail:'73% absorption reduction'},
-      {drug:'EFV + Rifampicin',severity:3,type:'danger',detail:'CYP3A4 induction — Major'},
-      {drug:'ATV/r + PPIs',severity:3,type:'danger',detail:'Elevated pH → no absorption'},
-      {drug:'TDF + NSAIDs',severity:2,type:'warn',detail:'Nephrotoxicity risk'},
-      {drug:'EFV + Alcohol',severity:2,type:'warn',detail:'CNS depression — Moderate'},
-      {drug:'DTG + Metformin',severity:2,type:'warn',detail:'Increased metformin AUC 79%'}
+      {drug:'DTG + Antacids/Mg2+',severity:3,type:'danger',detail:'73% absorption reduction',expanded:'Dolutegravir chelates with divalent cations (Mg2+, Al3+, Ca2+, Fe2+) forming insoluble complexes in the GI tract. This reduces DTG bioavailability by up to 73%. Administer DTG 2 hours before or 6 hours after antacids, iron supplements, calcium, or multivitamins containing minerals.'},
+      {drug:'EFV + Rifampicin',severity:3,type:'danger',detail:'CYP3A4 induction — Major',expanded:'Rifampicin is a potent CYP3A4 and CYP2B6 inducer, reducing efavirenz plasma levels significantly. In patients >60 kg, increase EFV dose to 800 mg nocte. Preferred strategy: switch to DTG 50 mg BD which has a higher barrier to resistance and better pharmacokinetic interaction profile with rifampicin.'},
+      {drug:'ATV/r + PPIs',severity:3,type:'danger',detail:'Elevated pH — no absorption',expanded:'Atazanavir requires an acidic gastric environment for dissolution and absorption. Proton pump inhibitors (omeprazole, pantoprazole) raise gastric pH dramatically, rendering ATV/r essentially unabsorbable. Avoid co-prescription. If acid suppression is needed, use low-dose H2 blockers (ranitidine max 150 mg BD) with careful timing.'},
+      {drug:'TDF + NSAIDs',severity:2,type:'warn',detail:'Nephrotoxicity risk',expanded:'Tenofovir is primarily renally eliminated and can cause proximal tubular dysfunction. NSAIDs reduce renal prostaglandin synthesis and renal blood flow, compounding TDF nephrotoxicity risk. Monitor eGFR and urine protein regularly. Use paracetamol preferentially for pain/fever management in TDF-containing regimens.'},
+      {drug:'EFV + Alcohol',severity:2,type:'warn',detail:'CNS depression — Moderate',expanded:'Efavirenz commonly causes CNS side effects (dizziness, vivid dreams, confusion). Alcohol potentiates these CNS depressant effects and impairs adherence. Counsel patients to avoid alcohol especially during the first weeks of EFV therapy when CNS effects are most pronounced.'},
+      {drug:'DTG + Metformin',severity:2,type:'warn',detail:'Increased metformin AUC 79%',expanded:'Dolutegravir inhibits renal organic cation transporter 2 (OCT2) and multidrug and toxin extrusion protein 1 (MATE1), reducing metformin renal elimination. This raises metformin AUC by ~79%, increasing risk of lactic acidosis. Limit metformin dose to 1000 mg/day max when co-administered with DTG. Monitor renal function.'}
     ],
     ci:[
-      {cond:'1st Trimester (cautionary)',drug:'Efavirenz 600 mg',alt:'DTG (preferred in pregnancy since 2020 WHO guidelines)'},
+      {cond:'1st Trimester (cautionary)',drug:'Efavirenz 600 mg',alt:'DTG (preferred in pregnancy since 2020 WHO)'},
       {cond:'Renal impairment (CrCl<50)',drug:'TDF full dose',alt:'TAF 25 mg (renal-sparing) or AZT-based'},
       {cond:'Active TB co-treatment',drug:'Boosted PI / Rilpivirine',alt:'DTG 50 mg BD or EFV 800 mg with Rifampicin'},
       {cond:'Known NNRTI resistance',drug:'EFV / Nevirapine',alt:'DTG-based 2nd line (ATV/r+TDF+3TC)'}
@@ -621,17 +578,23 @@ const NEWS=[
   {type:'Outbreak',color:'b-red',title:'Lassa fever — Ondo and Edo States on alert',date:'18 Apr 2026 · NCDC',icon:'🦠',summary:'16 confirmed cases this month. Nosocomial transmission in 2 facilities. Ribavirin prophylaxis protocol activated for high-risk HCW contacts. PPE compliance being monitored.',tags:['Lassa Fever','Ribavirin','HCW Safety']},
   {type:'Research',color:'b-teal',title:'TLD performance superior in sub-Saharan Africa — 5-yr data',date:'15 Apr 2026 · NEJM',icon:'📋',summary:'Large cohort study confirms dolutegravir-based TLD achieves >95% VL suppression at 24 months across West African cohorts, outperforming EFV600 in resistance barrier and CNS tolerability.',tags:['HIV ART','TLD','Dolutegravir']},
   {type:'WHO Notice',color:'b-amber',title:'Antimicrobial resistance — Nigeria AMR National Action Plan 2026',date:'10 Apr 2026 · FMOH Nigeria',icon:'⚠️',summary:'Nigeria launches Phase 2 AMR NAP. Key targets: 50% reduction in carbapenem use by 2028, antimicrobial stewardship programmes in 500 hospitals, pharmacy dispensing reform to curb OTC antibiotic sales.',tags:['AMR','Antibiotic Stewardship','Policy']},
-  {type:'Vaccine',color:'b-green',title:'R21/Matrix-M malaria vaccine scale-up — GAVI partnership',date:'5 Apr 2026 · GAVI',icon:'💉',summary:'Nigeria to receive 5M doses R21 malaria vaccine for children 5–17 months in 2026 Q3. Partnership between Oxford-Serum Institute and GAVI secures supply. First shipment to Lagos State.',tags:['Malaria Vaccine','R21','Prevention']}
+  {type:'Vaccine',color:'b-green',title:'R21/Matrix-M malaria vaccine scale-up — GAVI partnership',date:'5 Apr 2026 · GAVI',icon:'💉',summary:'Nigeria to receive 5M doses R21 malaria vaccine for children 5-17 months in 2026 Q3. Partnership between Oxford-Serum Institute and GAVI secures supply. First shipment to Lagos State.',tags:['Malaria Vaccine','R21','Prevention']}
 ];
 
 let curDisease='malaria';
-  function toggleSidebar(){
+let curTab='guidelines';
+
+function toggleSidebar(){
   const sb=document.getElementById('sidebar');
   sb.classList.toggle('open');
   const ov=document.getElementById('overlay');
   ov.classList.toggle('show');
 }
-let curTab='guidelines';
+
+function toggleImap(el){
+  const exp=el.querySelector('.imap-expanded');
+  if(exp)exp.style.display=exp.style.display==='none'?'block':'none';
+}
 
 function buildBadge(cls,txt){return`<span class="badge ${cls}">${txt}</span>`}
 
@@ -642,70 +605,28 @@ function renderDisease(d){
   document.getElementById('ff-text').textContent=data.ff_text;
   document.getElementById('ff-recall').textContent=data.ff_recall;
   document.getElementById('patho-sub').textContent=data.patho_sub;
-
-  let statsHtml=data.stats.map(s=>`<div class="stat-chip"><span class="stat-num">${s.n}</span><span class="stat-lbl">${s.l}</span></div>`).join('');
-  document.getElementById('stats-strip').innerHTML=statsHtml;
-
-  let pathoHtml=data.patho.map(p=>`<div class="patho-row"><div class="patho-dot"></div><div class="patho-text"><span class="patho-label">${p.label}</span>${p.text}</div></div>`).join('');
-  document.getElementById('patho-content').innerHTML=pathoHtml;
-
-  let clinHtml=`<div style="margin-bottom:8px;display:flex;flex-wrap:wrap;gap:4px">`+data.clinical.map(c=>`<span class="clinical-chip">${c}</span>`).join('')+`</div>
-  <div class="alert-row alert-ddi" style="padding:7px;margin-bottom:0"><div class="alert-icon" style="font-size:10px">!</div><div><div class="alert-title" style="font-size:11px">Severe / Red Flags</div><div class="alert-desc">${data.clinical_severe}</div></div></div>`;
-  document.getElementById('clinical-content').innerHTML=clinHtml;
-
   document.getElementById('pharma-sub').textContent='First-line & alternative drug regimens — '+data.dotd;
-
-  let tbodyHtml=data.drugs.map(dr=>`<tr>
-    <td><span class="drug-name">${dr.name}</span>${buildBadge(dr.cls,dr.cls_txt)}</td>
-    <td><span class="moa-text">${dr.moa}</span></td>
-    <td><span class="dose-adult">${dr.adult}</span></td>
-    <td><span class="dose-ped">${dr.ped}</span></td>
-    <td>${buildBadge(dr.line,dr.line_txt)}</td>
-  </tr>`).join('');
-  document.getElementById('pharma-tbody').innerHTML=tbodyHtml;
-
-  const alertIcons={ddi:'✕',ddf:'⚑',ci:'⊘'};
-  const alertClasses={ddi:'alert-ddi',ddf:'alert-ddf',ci:'alert-ci'};
-  let alertsHtml=data.alerts.map(a=>`<div class="alert-row ${alertClasses[a.type]}">
-    <div class="alert-icon">${alertIcons[a.type]}</div>
-    <div><div class="alert-title">${a.title}</div><div class="alert-desc">${a.desc}</div></div>
-  </div>`).join('');
-  document.getElementById('alerts-content').innerHTML=alertsHtml;
-
-  let counselHtml=data.counsel.map((c,i)=>`<div class="counsel-item">
-    <div class="counsel-num">${i+1}</div>
-    <div class="counsel-text">${c}</div>
-  </div>`).join('');
-  document.getElementById('counsel-content').innerHTML=counselHtml;
-
-  let imapHtml=data.imap.map(n=>`<div class="imap-node ${n.type}" onclick="toggleImap(this)">
-    <div class="imap-icon">${n.type==='danger'?'⚠':'⚡'}</div>
-    <div class="imap-label" style="font-size:11px">${n.drug}</div>
-   <div class="imap-detail">${n.detail}</div>
-<div class="imap-expanded" style="display:none;margin-top:8px;padding-top:8px;border-top:0.5px solid rgba(0,0,0,0.1);font-size:11px;color:var(--txt2);text-align:left;line-height:1.5">${n.expanded||n.detail}</div>
-    <div class="imap-severity">${Array(n.severity).fill('<div class="sev-dot" style="background:'+(n.type==='danger'?'#E24B4A':'#BA7517')+'"></div>').join('')}${Array(3-n.severity).fill('<div class="sev-dot" style="background:var(--border)"></div>').join('')}</div>
-  </div>`).join('');
-  document.getElementById('imap-grid').innerHTML=imapHtml;
-
-  let ciHtml=`<table class="ptable"><thead><tr><th>Condition</th><th>Avoid Drug</th><th>Safer Alternative</th></tr></thead><tbody>`+
-    data.ci.map(c=>`<tr><td><span class="badge b-red">${c.cond}</span></td><td style="color:var(--red);font-weight:500;font-size:12px">${c.drug}</td><td style="color:var(--teal);font-size:12px">${c.alt}</td></tr>`).join('')+'</tbody></table>';
-  document.getElementById('ci-matrix').innerHTML=ciHtml;
+  document.getElementById('stats-strip').innerHTML=data.stats.map(s=>`<div class="stat-chip"><span class="stat-num">${s.n}</span><span class="stat-lbl">${s.l}</span></div>`).join('');
+  document.getElementById('patho-content').innerHTML=data.patho.map(p=>`<div class="patho-row"><div class="patho-dot"></div><div class="patho-text"><span class="patho-label">${p.label}</span>${p.text}</div></div>`).join('');
+  document.getElementById('clinical-content').innerHTML=`<div style="margin-bottom:8px;display:flex;flex-wrap:wrap;gap:4px">${data.clinical.map(c=>`<span class="clinical-chip">${c}</span>`).join('')}</div><div class="alert-row alert-ddi" style="padding:7px;margin-bottom:0"><div class="alert-icon" style="font-size:10px">!</div><div><div class="alert-title" style="font-size:11px">Severe / Red Flags</div><div class="alert-desc">${data.clinical_severe}</div></div></div>`;
+  document.getElementById('pharma-tbody').innerHTML=data.drugs.map(dr=>`<tr><td><span class="drug-name">${dr.name}</span>${buildBadge(dr.cls,dr.cls_txt)}</td><td><span class="moa-text">${dr.moa}</span></td><td><span class="dose-adult">${dr.adult}</span></td><td><span class="dose-ped">${dr.ped}</span></td><td>${buildBadge(dr.line,dr.line_txt)}</td></tr>`).join('');
+  const ai={ddi:'✕',ddf:'⚑',ci:'⊘'};
+  const ac={ddi:'alert-ddi',ddf:'alert-ddf',ci:'alert-ci'};
+  document.getElementById('alerts-content').innerHTML=data.alerts.map(a=>`<div class="alert-row ${ac[a.type]}"><div class="alert-icon">${ai[a.type]}</div><div><div class="alert-title">${a.title}</div><div class="alert-desc">${a.desc}</div></div></div>`).join('');
+  document.getElementById('counsel-content').innerHTML=data.counsel.map((c,i)=>`<div class="counsel-item"><div class="counsel-num">${i+1}</div><div class="counsel-text">${c}</div></div>`).join('');
+  document.getElementById('imap-grid').innerHTML=data.imap.map(n=>`
+    <div class="imap-node ${n.type}" onclick="toggleImap(this)">
+      <div class="imap-icon">${n.type==='danger'?'⚠':'⚡'}</div>
+      <div class="imap-label">${n.drug}</div>
+      <div class="imap-detail">${n.detail}</div>
+      <div class="imap-severity">${Array(n.severity).fill(`<div class="sev-dot" style="background:${n.type==='danger'?'#E24B4A':'#BA7517'}"></div>`).join('')}${Array(3-n.severity).fill('<div class="sev-dot" style="background:var(--border)"></div>').join('')}</div>
+      <div class="imap-expanded" style="display:none;margin-top:8px;padding-top:8px;border-top:0.5px solid rgba(0,0,0,0.1);font-size:11px;color:var(--txt2);text-align:left;line-height:1.5">${n.expanded||n.detail}</div>
+    </div>`).join('');
+  document.getElementById('ci-matrix').innerHTML=`<table class="ptable"><thead><tr><th>Condition</th><th>Avoid Drug</th><th>Safer Alternative</th></tr></thead><tbody>${data.ci.map(c=>`<tr><td>${buildBadge('b-red',c.cond)}</td><td style="color:var(--red);font-weight:500;font-size:12px">${c.drug}</td><td style="color:var(--teal);font-size:12px">${c.alt}</td></tr>`).join('')}</tbody></table>`;
 }
 
 function buildNews(){
-  let html=NEWS.map(n=>`<div class="news-card">
-    <div class="news-icon-wrap" style="background:${n.type==='Outbreak'?'var(--red-bg)':n.type==='WHO Notice'?'var(--amber-bg)':n.type==='Research'?'var(--teal-light)':n.type==='Drug Update'?'var(--blue-bg)':n.type==='Vaccine'?'var(--green-bg)':'var(--purple-bg)'}">
-      <span style="font-size:16px">${n.icon}</span>
-    </div>
-    <div style="flex:1;min-width:0">
-      <span class="news-badge ${n.color}">${n.type}</span>
-      <div class="news-title">${n.title}</div>
-      <div class="news-meta">${n.date}</div>
-      <div class="news-summary">${n.summary}</div>
-      <div style="margin-top:6px">${n.tags.map(t=>`<span class="news-tag b-teal">${t}</span>`).join('')}</div>
-    </div>
-  </div>`).join('');
-  document.getElementById('news-feed').innerHTML=html;
+  document.getElementById('news-feed').innerHTML=NEWS.map(n=>`<div class="news-card"><div class="news-icon-wrap" style="background:${n.type==='Outbreak'?'var(--red-bg)':n.type==='WHO Notice'?'var(--amber-bg)':n.type==='Research'?'var(--teal-light)':n.type==='Drug Update'?'var(--blue-bg)':n.type==='Vaccine'?'var(--green-bg)':'var(--purple-bg)'}"><span style="font-size:16px">${n.icon}</span></div><div style="flex:1;min-width:0"><span class="news-badge ${n.color}">${n.type}</span><div class="news-title">${n.title}</div><div class="news-meta">${n.date}</div><div class="news-summary">${n.summary}</div><div style="margin-top:6px">${n.tags.map(t=>`<span class="news-tag b-teal">${t}</span>`).join('')}</div></div></div>`).join('');
 }
 
 function loadDisease(d){
@@ -727,10 +648,7 @@ function filterCat(cat){
   };
   const c=cats[cat]||cats.infectious;
   document.getElementById('dis-cat-label').textContent=c.label;
-  let disHtml=c.diseases.map((d,i)=>`<div class="dis-btn ${i===0?'active':''}" onclick="loadDisease('${d.id}')">
-    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>${d.name}
-  </div>`).join('');
-  document.getElementById('dis-list').innerHTML=disHtml;
+  document.getElementById('dis-list').innerHTML=c.diseases.map((d,i)=>`<div class="dis-btn ${i===0?'active':''}" onclick="loadDisease('${d.id}')"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>${d.name}</div>`).join('');
 }
 
 function switchTab(t){
@@ -746,10 +664,9 @@ function switchTab(t){
 document.getElementById('srch').addEventListener('input',function(){
   const q=this.value.toLowerCase();
   if(q.length<2)return;
-  for(const [k,v] of Object.entries(DB)){
+  for(const[k,v]of Object.entries(DB)){
     if(v.dotd.toLowerCase().includes(q)||v.ff_title.toLowerCase().includes(q)){
-      loadDisease(k);
-      break;
+      loadDisease(k);break;
     }
   }
 });
