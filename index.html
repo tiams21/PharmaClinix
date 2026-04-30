@@ -188,6 +188,10 @@ body{background:#f0f4f8;padding:20px;}
   <!-- HEADER -->
   <div class="hdr">
     <button class="mob-menu-btn" onclick="toggleSidebar()">
+      function toggleImap(el){
+  const exp=el.querySelector('.imap-expanded');
+  if(exp)exp.style.display=exp.style.display==='none'?'block':'none';
+}
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
 </button>
     <div class="hdr-logo">
@@ -447,7 +451,7 @@ const DB = {
       'Pregnant women in endemic areas should receive Intermittent Preventive Therapy (IPTp-SP) at each ANC visit after 13 weeks.'
     ],
     imap:[
-      {drug:'AL + Halofantrine',severity:3,type:'danger',detail:'QTc prolongation — Major'},
+     {drug:'AL + Halofantrine',severity:3,type:'danger',detail:'QTc prolongation — Major',expanded:'Both AL and Halofantrine prolong the QT interval. Co-administration can cause fatal arrhythmias including Torsades de Pointes. Avoid completely. ECG monitoring required if exposure occurred.'},
       {drug:'Quinine + Digoxin',severity:3,type:'danger',detail:'Elevated digoxin levels — Major'},
       {drug:'AL + Rifampicin',severity:2,type:'warn',detail:'Reduced AL efficacy — Moderate'},
       {drug:'CQ + Amiodarone',severity:3,type:'danger',detail:'QTc prolongation — Major'},
@@ -674,10 +678,11 @@ function renderDisease(d){
   </div>`).join('');
   document.getElementById('counsel-content').innerHTML=counselHtml;
 
-  let imapHtml=data.imap.map(n=>`<div class="imap-node ${n.type}" onclick="void(0)">
+  let imapHtml=data.imap.map(n=>`<div class="imap-node ${n.type}" onclick="toggleImap(this)">
     <div class="imap-icon">${n.type==='danger'?'⚠':'⚡'}</div>
     <div class="imap-label" style="font-size:11px">${n.drug}</div>
-    <div class="imap-detail">${n.detail}</div>
+   <div class="imap-detail">${n.detail}</div>
+<div class="imap-expanded" style="display:none;margin-top:8px;padding-top:8px;border-top:0.5px solid rgba(0,0,0,0.1);font-size:11px;color:var(--txt2);text-align:left;line-height:1.5">${n.expanded||n.detail}</div>
     <div class="imap-severity">${Array(n.severity).fill('<div class="sev-dot" style="background:'+(n.type==='danger'?'#E24B4A':'#BA7517')+'"></div>').join('')}${Array(3-n.severity).fill('<div class="sev-dot" style="background:var(--border)"></div>').join('')}</div>
   </div>`).join('');
   document.getElementById('imap-grid').innerHTML=imapHtml;
